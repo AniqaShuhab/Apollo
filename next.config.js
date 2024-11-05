@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Keep your existing image configuration
+  output: 'export',
+  basePath: '/Apollo',
   images: {
+    unoptimized: true,
+    loader: 'custom',
+    loaderFile: './image-loader.js',
     domains: ["localhost"],
     remotePatterns: [
       {
@@ -11,13 +15,6 @@ const nextConfig = {
       },
     ],
   },
-  // Add these new configurations for GitHub Pages
-  output: 'export',
-  basePath: '/Apollo',
-  assetPrefix: '/Apollo/',
-  images: {
-    unoptimized: true,
-  },
-};
+}
 
-module.exports = nextConfig; 
+module.exports = nextConfig
