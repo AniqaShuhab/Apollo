@@ -7,7 +7,26 @@ const checkIcon = (
   </svg>
 );
 
-const AboutSectionOne = () => {
+interface AboutSectionOneProps {
+  title?: string;
+  paragraph?: string;
+  lists?: string[];
+  image?: string;
+}
+
+const AboutSectionOne = ({
+  title = "Why Apollo?",
+  paragraph = "Help companies and organizations deliver innovative technology solutions...",
+  lists = [
+    "History & Permanence",
+    "Local Coverage & Extensive Reach",
+    "Agility & Flexiblity",
+    "Staff Augmentation",
+    "Dedicated Teams",
+    "Integrity & Transparency"
+  ],
+  image = "/images/about/about-image.jpg"
+}: AboutSectionOneProps) => {
   const List = ({ text }) => (
     <p className="mb-5 flex items-center text-lg font-medium text-body-color">
       <span className="mr-4 flex h-[30px] w-[30px] items-center justify-center rounded-md bg-primary bg-opacity-10 text-primary">
@@ -24,8 +43,8 @@ const AboutSectionOne = () => {
           <div className="-mx-4 flex flex-wrap items-center">
             <div className="w-full px-4 lg:w-1/2">
               <SectionTitle
-                title="Crafted for Startup, SaaS and Business Sites."
-                paragraph="Help companies and organizations deliver innovative technology solutions to power their growth by unlocking access to passionate and experienced engineers and solution providers."
+                title={title}
+                paragraph={paragraph}
                 mb="44px"
               />
 
@@ -35,15 +54,15 @@ const AboutSectionOne = () => {
               >
                 <div className="mx-[-12px] flex flex-wrap">
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Ship & Iterate" />
-                    <List text="Clear is Kind" />
-                    <List text="Trusted Pair of Hands" />
+                    {lists.slice(0, 3).map((text, index) => (
+                      <List key={index} text={text} />
+                    ))}
                   </div>
 
                   <div className="w-full px-3 sm:w-1/2 lg:w-full xl:w-1/2">
-                    <List text="Staff Augmentation" />
-                    <List text="Dedicated Teams" />
-                    <List text="Overdeliver on the Promise" />
+                    {lists.slice(3, 6).map((text, index) => (
+                      <List key={index} text={text} />
+                    ))}
                   </div>
                 </div>
               </div>
@@ -52,13 +71,13 @@ const AboutSectionOne = () => {
             <div className="w-full px-4 lg:w-1/2">
               <div className="relative mx-auto aspect-[25/24] max-w-[500px] lg:mr-0">
                 <Image
-                  src="/images/about/about-image.png"
+                  src={image}
                   alt="about-image"
                   fill
                   className="mx-auto max-w-full drop-shadow-three dark:hidden dark:drop-shadow-none lg:mr-0"
                 />
                 <Image
-                  src="/images/about/about-image.png"
+                  src={image}
                   alt="about-image"
                   fill
                   className="mx-auto hidden max-w-full drop-shadow-three dark:block dark:drop-shadow-none lg:mr-0"

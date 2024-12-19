@@ -31,3 +31,21 @@
     @apply opacity-100;
   }
 }
+
+/* Add these styles to handle the submenu layout */
+.submenu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  width: 800px;
+  left: -653px;
+  position: absolute;
+}
+
+@media (max-width: 991px) {
+  .submenu-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    left: 0;
+  }
+}

@@ -1,6 +1,30 @@
 import Image from "next/image";
 
-const AboutSectionTwo = () => {
+interface AboutSectionTwoProps {
+  image?: string;
+  features?: {
+    title: string;
+    description: string;
+  }[];
+}
+
+const AboutSectionTwo = ({
+  image = "/images/about/about-image-2.jpg",
+  features = [
+    {
+      title: "Business Solutions",
+      description: "Elevating businesses with advanced analytics...",
+    },
+    {
+      title: "Model Training and Customization",
+      description: "AI models can generate personalized content...",
+    },
+    {
+      title: "Support and Maintenance",
+      description: "Generative AI models can be scaled...",
+    },
+  ],
+}: AboutSectionTwoProps) => {
   return (
     <section className="py-16 md:py-20 lg:py-28">
       <div className="container">
@@ -11,13 +35,13 @@ const AboutSectionTwo = () => {
               data-wow-delay=".15s"
             >
               <Image
-                src="/images/about/about-image-2.png"
+                src={image}
                 alt="about image"
                 fill
                 className="drop-shadow-three dark:hidden dark:drop-shadow-none"
               />
               <Image
-                src="/images/about/about-image-2.png"
+                src={image}
                 alt="about image"
                 fill
                 className="hidden drop-shadow-three dark:block dark:drop-shadow-none"
@@ -26,30 +50,16 @@ const AboutSectionTwo = () => {
           </div>
           <div className="w-full px-4 lg:w-1/2">
             <div className="max-w-[470px]">
-              <div className="mb-9">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Business Solutions
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                Elevating businesses with advanced analytics, cloud & information management solutions for unparalleled.
-                </p>
-              </div>
-              <div className="mb-9">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                  Model Training and Customization
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                AI models can generate personalized content and solutions tailored to individual user preferences.
-                </p>
-              </div>
-              <div className="mb-1">
-                <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
-                Support and Maintenance
-                </h3>
-                <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
-                Generative AI models can be scaled to handle large volumes of data and generate outputs at scale.
-                </p>
-              </div>
+              {features.map((feature, index) => (
+                <div key={index} className="mb-9">
+                  <h3 className="mb-4 text-xl font-bold text-black dark:text-white sm:text-2xl lg:text-xl xl:text-2xl">
+                    {feature.title}
+                  </h3>
+                  <p className="text-base font-medium leading-relaxed text-body-color sm:text-lg sm:leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
