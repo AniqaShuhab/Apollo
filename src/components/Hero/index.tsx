@@ -15,7 +15,7 @@ const Hero = () => {
                   Be the market leader in your industry
                 </h1>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                  Access 2,000+ passionate and experienced software engineers
+                  Access 200+ passionate and experienced software engineers
                   with skillsets in 100+ technologies, in your timezone.
                   We leverage the latest advancements in AI to deliver
                   the highest quality technology, on time and on budget

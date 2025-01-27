@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Our Clients | Your Company Name",
-  description: "Discover the organizations that trust our solutions. Join hundreds of satisfied customers using our solutions globally.",
+  description: "Discover the organizations that trust our solutions. Join 50+ of satisfied customers using our solutions globally.",
   // You can add more metadata properties as needed
 };
 
@@ -13,7 +13,7 @@ const ClientPage = () => {
     <>
       <Breadcrumb
         pageName="Our Clients"
-        description="Join hundreds of satisfied customers using our solutions globally."
+        description="Join 50+ of satisfied customers using our solutions globally."
       />
       <div className="pb-[120px]">
         <Clients />

@@ -12,7 +12,7 @@ const Clients = () => {
                 Our Happy Clients
               </h2>
               <p className="text-base text-body-color dark:text-dark-6">
-                Join hundreds of satisfied customers using our solutions globally.
+                Join 50+ of satisfied customers using our solutions globally.
               </p>
             </div>
           </div>
