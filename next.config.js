@@ -2,7 +2,7 @@
 const nextConfig = {
   output: 'export',  // This is crucial for static HTML export
   basePath: '/Apollo',
-  assetPrefix: '/Apollo/',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Apollo/' : '',
   trailingSlash: true,
   images: {
     unoptimized: true,
